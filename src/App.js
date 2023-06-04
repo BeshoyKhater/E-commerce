@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 //Pages
 import { Home, CategoryProduct, ProductSingle, Cart, Search } from "./pages/index";
 //components
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
           <Header />
           <Sidebar />
 
@@ -28,7 +28,7 @@ function App() {
           </Routes>
 
           <Footer />
-        </BrowserRouter>
+        </HashRouter>
       </Provider>
     </div>
   );
