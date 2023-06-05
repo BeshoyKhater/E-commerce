@@ -13,8 +13,6 @@ const CategoryProductPage = () => {
   const categoryProducts = useSelector(getAllProductsByCategory)
   const categoryProductsStatus = useSelector(getCategoryProductsStatus)
 
-  console.log(categoryProducts)
-
   useEffect(() => {
     dispatch(fetchAsyncProductsOfCategory(category))
   }, [category, dispatch]);

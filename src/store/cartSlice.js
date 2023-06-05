@@ -35,7 +35,6 @@ const cartSlice = createSlice({
                         let tempQty = item.quantity + action.payload.quantity;
                         let tempTotalPrice = tempQty * item.price;
 
-                        console.log(tempTotalPrice)
                         return {
                             ...item, quantity: tempQty,
                             totalPrice: tempTotalPrice
