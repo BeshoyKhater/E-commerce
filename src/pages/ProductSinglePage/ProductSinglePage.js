@@ -56,6 +56,11 @@ const ProductSinglePage = () => {
     dispatch(addToCart({ ...product, quantity: quantity, totalPrice, discountedPrice }))
     dispatch(setCartMessage(true))
   }
+
+
+  const handleImage = (e) => {
+    document.querySelector("[name='main']").src = e.target.src;
+  }
   return (
     <main className='py-5'>
       <div className='product-single'>
@@ -65,21 +70,24 @@ const ProductSinglePage = () => {
             <div className='product-single-l'>
               <div className='product-img'>
                 <div className='product-img-zoom'>
-                  <img src={product ? (product.images ? product.images[0] : '') : ''} alt="" className='img-cover' />
+                  <img name="main" src={product ? (product.images ? product.images[0] : '') : ''} alt="" className='img-cover' />
                 </div>
 
                 <div className='product-img-thumbs'>
                   <div className='thumb-item'>
-                    <img src={product ? (product.images ? product.images[1] : '') : ''} alt="" />
+                    <img onClick={handleImage} src={product ? (product.images ? product.images[0] : '') : ''} alt="" />
                   </div>
                   <div className='thumb-item'>
-                    <img src={product ? (product.images ? product.images[2] : '') : ''} alt="" />
+                    <img onClick={handleImage} src={product ? (product.images ? product.images[1] : '') : ''} alt="" />
                   </div>
                   <div className='thumb-item'>
-                    <img src={product ? (product.images ? product.images[3] : '') : ''} alt="" />
+                    <img onClick={handleImage} src={product ? (product.images ? product.images[2] : '') : ''} alt="" />
                   </div>
                   <div className='thumb-item'>
-                    <img src={product ? (product.images ? product.images[4] : '') : ''} alt="" />
+                    <img onClick={handleImage} src={product ? (product.images ? product.images[3] : '') : ''} alt="" />
+                  </div>
+                  <div className='thumb-item'>
+                    <img onClick={handleImage} src={product ? (product.images ? product.images[4] : '') : ''} alt="" />
                   </div>
                 </div>
               </div>

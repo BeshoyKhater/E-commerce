@@ -9,6 +9,13 @@
 
         .product-single-l {
             .product-img {
+                .product-img-zoom {
+                    height: 60rem;
+
+                    @media screen and (max-width:576px) {
+                        height: 40rem;
+                    }
+                }
                 .product-img-thumbs {
                     display: flex;
                     align-items: center;
